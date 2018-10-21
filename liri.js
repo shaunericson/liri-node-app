@@ -43,13 +43,21 @@ switch (command) {
         spotify.search({ type: "track", query: userInput }, function (err, data) {
             // console.log(data.tracks);
             var tracks = data.tracks;
-            var artists = 
-            console.log(tracks);
+            // var artists = 
+            // console.log(tracks);
             for (x = 0; x < tracks.items.length; x++) {
                 // console.log("working")
                 // console.log(tracks.items[x])
                 console.log("////////////////////////////////////////////")
-                console.log("Artists: " + tracks.items[x].artists[0].name);
+                artists = tracks.items[x].artists;
+                // console.log(artists[0].name);
+                for (y = 0; y < artists.length; y++) {
+                    // console.log("In here...");
+                    // console.log(aritsts[0].name);
+                    // console.log(artists.length);
+                    console.log("Artists(s): "+ artists[y].name);
+                }
+                // console.log("Artists: " + tracks.items[x].artists[0].name);
                 console.log("Song Name: " + tracks.items[x].name);
 
             }
