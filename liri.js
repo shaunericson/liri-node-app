@@ -44,12 +44,14 @@ switch (command) {
             // console.log(data.tracks);
             var tracks = data.tracks;
             // var artists = 
-            // console.log(tracks);
+            console.log(tracks);
             for (x = 0; x < tracks.items.length; x++) {
                 // console.log("working")
                 // console.log(tracks.items[x])
                 console.log("////////////////////////////////////////////")
                 artists = tracks.items[x].artists;
+                album = tracks.items[x].album;
+                // console.log(album);
                 // console.log(artists[0].name);
                 for (y = 0; y < artists.length; y++) {
                     // console.log("In here...");
@@ -59,7 +61,8 @@ switch (command) {
                 }
                 // console.log("Artists: " + tracks.items[x].artists[0].name);
                 console.log("Song Name: " + tracks.items[x].name);
-
+                console.log("Preview Link: " + tracks.items[x].preview_url)
+                console.log("Album Name: " + tracks.items[x].album.name)
             }
         })
     break;
